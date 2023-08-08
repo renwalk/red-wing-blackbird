@@ -1,7 +1,7 @@
 let sound, amplitude;
 
 function preload() {
-  sound = loadSound("RedWingBlackBird.wav");
+  sound = loadSound("RedWingBlackBirdisolated.wav");
 }
 
 function setup() {
