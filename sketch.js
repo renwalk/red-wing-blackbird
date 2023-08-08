@@ -6,7 +6,7 @@ function preload() {
 
 function setup() {
   
-  let cnv = createCanvas(600,600);
+  let cnv = createCanvas(windowWidth,windowHeight);
   cnv.mouseClicked(togglePlay);
 
   amplitude = new p5.Amplitude();
@@ -22,10 +22,11 @@ function draw() {
   let size = map(level, 0, 1, 0, 600);
     
     
-  ellipse(width/2, height/2, size*20, size*20);
+  ellipse(windowWidth/2, windowHeight/2, size*20, size*20);
   
   fill('yellow')
-  ellipse(width/2, height/2, size*5, size*5);
+  ellipse(windowWidth/2, windowHeight/2, size*5, size*5);
+  
 
     
       
@@ -38,5 +39,9 @@ function togglePlay() {
     sound.loop();
 		amplitude = new p5.Amplitude();
 		amplitude.setInput(sound);
+    
+      function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
   }
 }
