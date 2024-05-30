@@ -18,8 +18,12 @@ function draw() {
   background(0);
   noStroke();
 
-  let level = amplitude.getLevel();
-  let size = map(level, 0, 1, 0, 100);
+  let size = 2; // Default size
+  
+  if (sound.isPlaying()) {
+    let level = amplitude.getLevel();
+    size = map(level, 0, 1, 0, 300);
+  }  
   
   
   //Wing
